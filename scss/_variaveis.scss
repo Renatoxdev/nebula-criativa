@@ -1,0 +1,18 @@
+// (cores, espaçamentos, fontes)
+$color-bg: #fff;
+$color-text: #0b0d12;
+$color-muted-border: rgba(124, 119, 119, 0.164);
+$shadow-1: 0 4px 20px rgba(0,0,0,0.1);
+
+$container-max: 1200px;
+$gutter: clamp(12px, 2vw, 20px);
+$radius: 15px;
+
+$bp-sm: 640px;
+$bp-md: 768px;
+
+:root {
+  --fs-h1: clamp(1.5rem, 3vw, 2.25rem);
+  --fs-h2: clamp(1.25rem, 2.5vw, 1.75rem);
+  --fs-p:  clamp(1rem, 1.5vw, 1.125rem);
+}

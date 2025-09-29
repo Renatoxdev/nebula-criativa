@@ -1,0 +1,18 @@
+//(estilos base como body, tipografia, reset)
+@use 'variaveis' as *;
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html {
+  scroll-padding-top: 96px;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", "arial", sans-serif;
+  color: $color-text;     // agora existe
+  background: $color-bg;  // agora existe
+}

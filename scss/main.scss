@@ -1,0 +1,5 @@
+@use 'base'; //(estilos base como body, tipografia, reset)
+@use 'variaveis'; // (cores, espaçamentos, fontes)
+@use 'mixins'; //(estilos reutilizáveis)
+@use 'layout'; //(estrutura geral da página)
+@use 'components'; // (componentes como botões, cards, menus, etc.)

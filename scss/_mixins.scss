@@ -1,0 +1,21 @@
+//(estilos reutilizáveis)
+@use 'variaveis' as *;
+
+@mixin container($max: $container-max) {
+  width: min(#{$max}, 90%);
+  margin-inline: auto;
+}
+
+@mixin card {
+  width: 100%;
+  border-radius: $radius;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid $color-muted-border;
+  text-align: left;
+}
+
+@mixin grid-cards($min: 280px) {
+  display: grid;
+  gap: $gutter;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+}

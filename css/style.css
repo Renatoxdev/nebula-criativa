@@ -1,0 +1,227 @@
+@charset "UTF-8";
+:root {
+  --fs-h1: clamp(1.5rem, 3vw, 2.25rem);
+  --fs-h2: clamp(1.25rem, 2.5vw, 1.75rem);
+  --fs-p: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-padding-top: 96px;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", "arial", sans-serif;
+  color: #0b0d12;
+  background: #fff;
+}
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  width: 100%;
+  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 2vw, 2rem);
+  min-height: clamp(56px, 8vh, 88px);
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  nav ul {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+/* Intro (imagem esquerda, texto direita) */
+#intro {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  border-radius: 15px;
+  margin-top: clamp(80px, 12vh, 120px);
+  margin-bottom: clamp(1rem, 3vh, 2rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  text-align: left;
+  border: 1px solid rgba(124, 119, 119, 0.164);
+}
+
+#hackerman {
+  flex: 0 0 auto;
+  width: clamp(160px, 30vw, 280px);
+  height: auto;
+  object-fit: cover;
+}
+
+#intro .intro_text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  #intro {
+    flex-direction: column;
+    text-align: center;
+  }
+  #hackerman {
+    width: min(360px, 100%);
+  }
+}
+/* Seções principais */
+#us {
+  width: min(900px, 90%);
+  margin-inline: auto;
+  border-radius: 15px;
+  border: 1px solid rgba(124, 119, 119, 0.164);
+  margin-top: clamp(2rem, 6vh, 4rem);
+  margin-bottom: clamp(1rem, 4vh, 2rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+#works, #clients {
+  margin-inline: 2%;
+  display: grid;
+  gap: clamp(12px, 2vw, 20px);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+#contact {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+  border-radius: 15px;
+  margin-top: clamp(2rem, 6vh, 4rem);
+  margin-bottom: clamp(1rem, 4vh, 2rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  text-align: left;
+  border: 1px solid rgba(124, 119, 119, 0.164);
+}
+
+#comment {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Footer */
+.site-footer {
+  background: #0b0d12;
+  color: #fff;
+  margin-top: 4rem;
+}
+
+.footer-inner {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+.brand img {
+  height: 36px;
+  margin-bottom: 0.5rem;
+}
+
+.contact a, .contact p {
+  display: block;
+  margin: 0.25rem 0;
+}
+
+.legal {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .legal {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+.site-footer a {
+  color: inherit;
+  opacity: 0.9;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-nav {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.social a {
+  margin-left: 0.75rem;
+}
+
+#whatsapp {
+  background-color: rgb(139, 247, 148);
+  border-radius: 5px;
+  height: 30px;
+}
+
+/* Cards reutilizando o mixin */
+.box__clients {
+  width: 100%;
+  border-radius: 15px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid rgba(124, 119, 119, 0.164);
+  text-align: left;
+  margin: 0 auto;
+  margin-top: clamp(1rem, 4vh, 2rem);
+  margin-bottom: clamp(0.75rem, 3vh, 1.5rem);
+}
+
+.box__works {
+  width: 100%;
+  border-radius: 15px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid rgba(124, 119, 119, 0.164);
+  text-align: left;
+  margin: 0 auto;
+  margin-top: clamp(1rem, 4vh, 2rem);
+  margin-bottom: clamp(0.75rem, 3vh, 1.5rem);
+}
+
+/*# sourceMappingURL=style.css.map */

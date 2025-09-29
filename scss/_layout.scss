@@ -1,0 +1,120 @@
+//(estrutura geral da página)
+
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  width: 100%;
+  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 2vw, 2rem);
+  min-height: clamp(56px, 8vh, 88px);
+  background-color: $color-bg;
+  box-shadow: $shadow-1;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li { margin: 0; }
+
+@media (max-width: $bp-sm) {
+  nav ul { flex-wrap: wrap; gap: .5rem; }
+}
+
+/* Intro (imagem esquerda, texto direita) */
+#intro {
+  @include container($container-max);
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  border-radius: $radius;
+  margin-top: clamp(80px, 12vh, 120px);
+  margin-bottom: clamp(1rem, 3vh, 2rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  text-align: left;
+  border: 1px solid $color-muted-border;
+}
+#hackerman {
+  flex: 0 0 auto;
+  width: clamp(160px, 30vw, 280px);
+  height: auto;
+  object-fit: cover;
+}
+#intro .intro_text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+@media (max-width: $bp-md) {
+  #intro { flex-direction: column; text-align: center; }
+  #hackerman { width: min(360px, 100%); }
+}
+
+/* Seções principais */
+#us {
+  @include container(900px);
+  border-radius: $radius;
+  border: 1px solid $color-muted-border;
+  margin-top: clamp(2rem, 6vh, 4rem);
+  margin-bottom: clamp(1rem, 4vh, 2rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+#works, #clients {
+  margin-inline: 2%;
+  @include grid-cards(280px);
+}
+
+#contact {
+  @include container($container-max);
+  border-radius: $radius;
+  margin-top: clamp(2rem, 6vh, 4rem);
+  margin-bottom: clamp(1rem, 4vh, 2rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  text-align: left;
+  border: 1px solid $color-muted-border;
+}
+
+#comment {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Footer */
+.site-footer { background:#0b0d12; color:#fff; margin-top:4rem; }
+
+.footer-inner {
+  @include container($container-max);
+  display:grid;
+  gap:1.25rem;
+  grid-template-columns:1.2fr 1fr 1fr;
+  padding:2rem 0;
+}
+@media (max-width: $bp-md) {
+  .footer-inner { grid-template-columns:1fr; }
+}
+
+.brand img { height:36px; margin-bottom:.5rem; }
+.contact a, .contact p { display:block; margin:.25rem 0; }
+
+.legal {
+  @include container($container-max);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:1px solid rgba(255,255,255,.1);
+  padding:1rem 0;
+}
+@media (max-width: $bp-md) {
+  .legal { flex-direction:column; gap:.5rem; }
+}
